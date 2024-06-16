@@ -51,7 +51,7 @@ public class Astar
                 return CalculatePath(currentNode);
             }
             currentCell = grid[currentNode.position.x, currentNode.position.y];
-
+            
             openList.Remove(currentNode);
             closedList.Add(currentNode.position);
 
@@ -67,12 +67,12 @@ public class Astar
                     neighbourNode.GScore = tentativeGCost;
                     neighbourNode.HScore = neighbourNode.SetDistance(neighbourNode, endNode);
 
-                    Node nodeIndex = nodesInGrid.Find(x => x.position == neighbourNode.position);
+                    /*Node nodeIndex = nodesInGrid.Find(x => x.position == neighbourNode.position);
                     int index = nodesInGrid.IndexOf(nodeIndex); 
                     if (index != -1)
                     {
                         nodesInGrid[index] = neighbourNode;
-                    }
+                    }*/
 
                     if (!openList.Contains(neighbourNode))
                     {
